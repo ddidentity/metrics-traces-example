@@ -22,3 +22,9 @@ Springboot3 actuator , along with prometheus backend and Grafana UI is used for
 ## Traces details
 I have used two spring boot service, one calls another. Used micrometer-bridge and zipkin reporter to send trace information to Grafana tempo which is listening on port 9411 and grafana is pulling data from port 3110 of Tempo. Grafana display is available on port 3000.
 
+## How to see traces and metrics
+Go to menu and then explore.
+You can choose prometheus for Metrics and Tempo for Traces.
+
+From traces get the trace ID and use traceQL.
+
