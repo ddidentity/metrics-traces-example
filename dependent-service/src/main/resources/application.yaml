@@ -1,0 +1,27 @@
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health, prometheus"
+  metrics:
+    distribution:
+      percentiles-histogram:
+        http:
+            server:
+                requests: true
+  tracing:
+    sampling:
+      probability: 1.0
+
+  observations:
+    key-values:
+        application: dependent-service
+
+spring:
+  application:
+    name: dependent-service
+
+server:
+  port: 8888
