@@ -1,0 +1,27 @@
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health, prometheus"
+  metrics:
+    distribution:
+      percentiles-histogram:
+        http:
+            server:
+                requests: true
+  tracing:
+    sampling:
+      probability: 1.0
+
+  observations:
+    key-values:
+        application: metrics-traces
+
+spring:
+  application:
+    name: metrics-traces
+
+server:
+  port: 8080
